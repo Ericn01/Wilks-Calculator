@@ -13,11 +13,11 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("/view/MainScene.fxml"));
-			Scene scene = new Scene(root,500,700);
+			Scene scene = new Scene(root,550,700);
 			Image icon = new Image("icon.webp");
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("Weightlifting companion");
+			primaryStage.setTitle("Weightlifting Companion");
 			primaryStage.getIcons().add(icon);
 			primaryStage.setResizable(false);
 			primaryStage.show();
