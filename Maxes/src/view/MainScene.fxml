@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="708.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="550.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.7764706015586853" green="1.0" blue="0.8666666746139526" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.4895524746217955">
+                     <color>
+                        <Color red="0.9843137264251709" green="0.843137264251709" blue="0.5254902243614197" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9686274528503418" green="0.4745098054409027" blue="0.4901960790157318" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Text fontSmoothingType="LCD" layoutX="25.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="58.158203125">
+         <font>
+            <Font name="Javanese Text" size="15.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="25.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sex" wrappingWidth="58.158203125">
+         <font>
+            <Font name="Javanese Text" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="28.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fontSmoothingType="LCD" layoutX="21.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lifts" wrappingWidth="124.46875">
+         <font>
+            <Font name="Javanese Text" size="15.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="22.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" wrappingWidth="46.13671875">
+         <font>
+            <Font name="Javanese Text" size="15.0" />
+         </font>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fontSmoothingType="LCD" layoutX="25.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bodyweight" wrappingWidth="101.13671875">
+         <font>
+            <Font name="Javanese Text" size="15.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="20.0" layoutY="466.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Benchpress" wrappingWidth="95.13671875">
+         <font>
+            <Font name="Javanese Text" size="15.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="20.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Squat" wrappingWidth="95.13671875">
+         <font>
+            <Font name="Javanese Text" size="15.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="20.0" layoutY="531.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deadlift" wrappingWidth="95.13671875">
+         <font>
+            <Font name="Javanese Text" size="15.0" />
+         </font>
+      </Text>
+      <MenuButton layoutX="307.0" layoutY="175.0" mnemonicParsing="false" text="Lbs">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </MenuButton>
+      <TextField layoutX="125.0" layoutY="175.0" prefHeight="25.0" prefWidth="174.0" style="-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0,0);;" />
+      <Text fontSmoothingType="LCD" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="How does your strength compare? " textAlignment="CENTER" wrappingWidth="487.0">
+         <font>
+            <Font name="Javanese Text" size="30.0" />
+         </font>
+      </Text>
+      <Slider blockIncrement="1.0" layoutX="125.0" layoutY="277.0" majorTickUnit="5.0" min="15.0" prefHeight="33.0" prefWidth="377.0" showTickLabels="true" snapToTicks="true" />
+      <TextField layoutX="125.0" layoutY="127.0" prefHeight="25.0" prefWidth="174.0" />
+      <Text fontSmoothingType="LCD" layoutX="16.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Information" wrappingWidth="197.46875">
+         <font>
+            <Font name="Javanese Text" size="20.0" />
+         </font>
+      </Text>
+      <Button layoutX="25.0" layoutY="595.0" mnemonicParsing="false" style="-fx-background-color: #add8e6;" text="Calculate Strength" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="209.0" layoutY="595.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="101.0" style="-fx-background-color: #add8e6;" text="Clear" textAlignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <RadioButton layoutX="126.0" layoutY="225.0" mnemonicParsing="false" text="Male" />
+      <RadioButton layoutX="200.0" layoutY="225.0" mnemonicParsing="false" text="Female" />
+      <TextField layoutX="116.0" layoutY="447.0" prefHeight="25.0" prefWidth="166.0" />
+      <TextField layoutX="116.0" layoutY="393.0" prefHeight="25.0" prefWidth="166.0" />
+      <TextField layoutX="116.0" layoutY="512.0" prefHeight="25.0" prefWidth="166.0" />
+      <MenuButton layoutX="301.0" layoutY="393.0" mnemonicParsing="false" text="Lbs">
+         <items>
+            <MenuItem mnemonicParsing="false" text="Action 1" />
+            <MenuItem mnemonicParsing="false" text="Action 2" />
+         </items>
+      </MenuButton>
+      <MenuButton layoutX="299.0" layoutY="447.0" mnemonicParsing="false" text="Lbs">
+         <items>
+            <MenuItem mnemonicParsing="false" text="Action 1" />
+            <MenuItem mnemonicParsing="false" text="Action 2" />
+         </items>
+      </MenuButton>
+      <MenuButton layoutX="299.0" layoutY="512.0" mnemonicParsing="false" text="Lbs">
+         <items>
+            <MenuItem mnemonicParsing="false" text="Action 1" />
+            <MenuItem mnemonicParsing="false" text="Action 2" />
+         </items>
+      </MenuButton>
+      <Text fontSmoothingType="LCD" layoutX="348.0" layoutY="605.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wilks:" wrappingWidth="84.158203125">
+         <font>
+            <Font name="Javanese Text" size="15.0" />
+         </font>
+      </Text>
+      <Text fontSmoothingType="LCD" layoutX="353.0" layoutY="641.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Percentile" wrappingWidth="74.0">
+         <font>
+            <Font name="Javanese Text" size="15.0" />
+         </font>
+      </Text>
+      <Label layoutX="432.0" layoutY="587.0" prefHeight="17.0" prefWidth="110.0" text="." />
+      <Label layoutX="432.0" layoutY="627.0" prefHeight="17.0" prefWidth="101.0" text="." />
+      <ImageView fitHeight="150.0" fitWidth="166.0" layoutX="367.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
