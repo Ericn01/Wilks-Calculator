@@ -60,15 +60,12 @@ public class MainController implements Initializable{
 		String unit = units.getValue();
 		System.out.println(unit);
 		if (unit.equals("Kg")) {
-			iteratePlaceholder(fields, "kg");
 			unitSelected = 'K';
 		}
 		else if (unit.equals("Lbs")) {
-			iteratePlaceholder(fields, "lbs");
 			unitSelected = 'L';
 		}
 		else if (unit.equals("Stones")) {
-			iteratePlaceholder(fields, "stone");
 			unitSelected = 'S';
 		}
 		else {
@@ -92,15 +89,18 @@ public class MainController implements Initializable{
 			int age = (int) ageInput.getValue(); 
 			
 			double squatVal = Double.parseDouble(squat.getText());
-			
 			double benchpress = Double.parseDouble(benchInput.getText());
 			double deadlift = Double.parseDouble(deadliftInput.getText());
 			
 			
-			Lifter inputtedLifter = new Lifter(name, age, sex, bodyweight, squatVal, benchpress, deadlift);
+			Lifter inputtedLifter = new Lifter(name, age, sex, bodyweight, deadlift, benchpress, squatVal);
+			
 			double wilksVal = inputtedLifter.wilks(unitsType);
 			System.out.println(squatVal);
-			System.out.println(inputtedLifter.getMaxSquat());
+			System.out.println("Name: " + inputtedLifter.getName() + " Age: " + inputtedLifter.getAge() +
+					" Squat: " + inputtedLifter.getMaxSquat()
+					+ " Bench: " + inputtedLifter.getMaxBench() +
+					" Deadlift " + inputtedLifter.getMaxDeadlift());
 			String lifterStandard = inputtedLifter.wilkStandards(wilksVal);
 			
 			wilks.setText(" " + wilksVal);

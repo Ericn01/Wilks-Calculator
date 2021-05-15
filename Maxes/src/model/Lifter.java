@@ -14,7 +14,7 @@ public class Lifter {
 	private double maxSquat;
 	private double bodyweight;
 	
-	public Lifter(String name, int age, int sex, double maxDeadlift, double bodyweight, double maxBench, double maxSquat) {
+	public Lifter(String name, int age, int sex, double bodyweight, double maxDeadlift, double maxBench, double maxSquat) {
 		super();
 		this.name = name;
 		this.age = age;
