@@ -14,7 +14,7 @@ public class Main extends Application {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("/view/MainScene.fxml"));
 			Scene scene = new Scene(root,550,700);
-			Image icon = new Image("icon.webp");
+			Image icon = new Image("logo(1).png");
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Weightlifting Companion");

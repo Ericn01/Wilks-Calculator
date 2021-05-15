@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="555.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="700.0" stroke="BLACK" strokeType="INSIDE" width="555.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.9411764740943909" green="0.5960784554481506" blue="0.09803921729326248" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.929411768913269" green="0.8705882430076599" blue="0.364705890417099" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#38cd69" height="163.0" layoutX="14.0" layoutY="133.0" stroke="BLACK" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(10,0,0,0.8), 10, 0, 0,0);" width="525.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1db2f0" height="233.0" layoutX="14.0" layoutY="348.0" stroke="BLACK" strokeType="INSIDE" style="-fx-effect: dropshadow(three-pass-box, rgba(10,0,0,0.8), 10, 0, 0,0);" width="525.0" />
+      <Text fill="WHITE" layoutX="90.0" layoutY="72.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.5" text="Athlete Results" wrappingWidth="341.19140625">
+         <font>
+            <Font name="Modern No. 20" size="55.0" />
+         </font>
+      </Text>
+      <Text layoutX="29.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" wrappingWidth="82.13671875">
+         <font>
+            <Font name="Maiandra GD" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="29.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" wrappingWidth="82.13671875">
+         <font>
+            <Font name="Maiandra GD" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="29.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sex" wrappingWidth="82.13671875">
+         <font>
+            <Font name="Maiandra GD" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="29.0" layoutY="438.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age adjusted wilks" wrappingWidth="197.13671875">
+         <font>
+            <Font name="Maiandra GD" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="29.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total weight lifted" wrappingWidth="197.13671875">
+         <font>
+            <Font name="Maiandra GD" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="29.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Percentile" wrappingWidth="197.13671875">
+         <font>
+            <Font name="Maiandra GD" size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="mainScene" layoutX="169.0" layoutY="644.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="215.0" style="-fx-border-radius: 20px;" text="Lookup a different athlete">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Label fx:id="name" layoutX="260.0" layoutY="143.0" prefHeight="26.0" prefWidth="94.0" text="Athlete's name" />
+      <Label fx:id="age" layoutX="260.0" layoutY="203.0" prefHeight="26.0" prefWidth="82.0" text="Athlete's age" />
+      <Label fx:id="sex" layoutX="260.0" layoutY="263.0" prefHeight="26.0" prefWidth="82.0" text="Athlete's sex" />
+      <Label fx:id="totalLifted" layoutX="260.0" layoutY="358.0" prefHeight="26.0" prefWidth="167.0" text="Total weight Lifted" />
+      <Label fx:id="totalWilks" layoutX="260.0" layoutY="418.0" prefHeight="26.0" prefWidth="167.0" text="Wilks score" />
+      <Label fx:id="percentile" layoutX="260.0" layoutY="478.0" prefHeight="26.0" prefWidth="167.0" text="Percentile score" />
+      <Text layoutX="29.0" layoutY="554.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Performance level" wrappingWidth="197.13671875">
+         <font>
+            <Font name="Maiandra GD" size="20.0" />
+         </font>
+      </Text>
+      <Label fx:id="performanceLevel" layoutX="260.0" layoutY="534.0" prefHeight="26.0" prefWidth="167.0" text="Performance level" />
+      <Line endX="238.19140625" layoutX="191.0" layoutY="85.0" startX="-100.0" stroke="#fc000080" strokeWidth="3.0" />
+      <ImageView fitHeight="145.0" fitWidth="167.0" layoutX="360.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../athlete.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="211.0" fitWidth="209.0" layoutX="353.0" layoutY="361.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../trophy.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="resultMessage" layoutX="14.0" layoutY="593.0" prefHeight="42.0" prefWidth="517.0" text="Congratulations person, you are a x level contender">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

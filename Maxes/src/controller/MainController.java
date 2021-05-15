@@ -1,11 +1,14 @@
 package controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -18,6 +21,7 @@ import model.Lifter;
 public class MainController implements Initializable{
 	final ToggleGroup group = new ToggleGroup();
 	
+	private Parent root;
 	// Inputs
 	@FXML
 	private TextField nameInput;
@@ -73,7 +77,7 @@ public class MainController implements Initializable{
 		}
 		return unitSelected;
 	}
-	public void submit(ActionEvent event) {
+	public void submit(ActionEvent event) throws IOException {
 			String name = nameInput.getText();
 			int sex;
 			if (male.isSelected()) {
@@ -82,7 +86,6 @@ public class MainController implements Initializable{
 			else {
 				sex = 1;
 			}
-		
 			char unitsType = unitsSelected();
 			
 			double bodyweight = Double.parseDouble(bodyweightInput.getText());
@@ -91,7 +94,6 @@ public class MainController implements Initializable{
 			double squatVal = Double.parseDouble(squat.getText());
 			double benchpress = Double.parseDouble(benchInput.getText());
 			double deadlift = Double.parseDouble(deadliftInput.getText());
-			
 			
 			Lifter inputtedLifter = new Lifter(name, age, sex, bodyweight, deadlift, benchpress, squatVal);
 			
@@ -103,9 +105,14 @@ public class MainController implements Initializable{
 					" Deadlift " + inputtedLifter.getMaxDeadlift());
 			String lifterStandard = inputtedLifter.wilkStandards(wilksVal);
 			
-			wilks.setText(" " + wilksVal);
-			percentile.setText("You are an " + lifterStandard + " level lifter.");
+			
+			FXMLLoader switchToResults = new FXMLLoader(getClass().getResource("Results.fxml"));
+			root = switchToResults.load();
+			ResultsController resultsPage = switchToResults.getController();
+			
+			resultsPage.getPerson(inputtedLifter);
 	}
+	
 	/**
 	 * Clear all the inputed value
 	 * @param event
