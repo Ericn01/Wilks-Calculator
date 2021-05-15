@@ -1,5 +1,139 @@
 package controller;
 
-public class MainController {
+import java.net.URL;
+import java.util.ResourceBundle;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.Slider;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
+import model.Lifter;
+
+public class MainController implements Initializable{
+	final ToggleGroup group = new ToggleGroup();
+	
+	// Inputs
+	@FXML
+	private TextField nameInput;
+	@FXML
+	private TextField bodyweightInput;
+	@FXML 
+	private TextField squat;
+	@FXML
+	private TextField benchInput;
+	@FXML
+	private TextField deadliftInput;
+	// labels
+	@FXML
+	private Label wilks;
+	@FXML
+	private Label percentile;
+	// radio buttons
+	@FXML
+	private RadioButton male;
+	@FXML
+	private RadioButton female;
+	
+	// Combobox
+	@FXML 
+	private ComboBox<String> units = new ComboBox<String>();
+	private String[] options = {"Kg", "Lbs", "Stones"};
+	// slider
+	@FXML
+	private Slider ageInput;
+	// buttons
+	@FXML 
+	Button submit;
+	@FXML 
+	Button clear;
+	
+	private TextField fields[] = {benchInput, deadliftInput, squat, bodyweightInput};
+	
+	public char unitsSelected() {
+		char unitSelected = 'A';
+		String unit = units.getValue();
+		System.out.println(unit);
+		if (unit.equals("Kg")) {
+			iteratePlaceholder(fields, "kg");
+			unitSelected = 'K';
+		}
+		else if (unit.equals("Lbs")) {
+			iteratePlaceholder(fields, "lbs");
+			unitSelected = 'L';
+		}
+		else if (unit.equals("Stones")) {
+			iteratePlaceholder(fields, "stone");
+			unitSelected = 'S';
+		}
+		else {
+			System.out.println("An error has occured");
+		}
+		return unitSelected;
+	}
+	public void submit(ActionEvent event) {
+			String name = nameInput.getText();
+			int sex;
+			if (male.isSelected()) {
+				sex = 0;
+			}
+			else {
+				sex = 1;
+			}
+		
+			char unitsType = unitsSelected();
+			
+			double bodyweight = Double.parseDouble(bodyweightInput.getText());
+			int age = (int) ageInput.getValue(); 
+			
+			double squatVal = Double.parseDouble(squat.getText());
+			
+			double benchpress = Double.parseDouble(benchInput.getText());
+			double deadlift = Double.parseDouble(deadliftInput.getText());
+			
+			
+			Lifter inputtedLifter = new Lifter(name, age, sex, bodyweight, squatVal, benchpress, deadlift);
+			double wilksVal = inputtedLifter.wilks(unitsType);
+			System.out.println(squatVal);
+			System.out.println(inputtedLifter.getMaxSquat());
+			String lifterStandard = inputtedLifter.wilkStandards(wilksVal);
+			
+			wilks.setText(" " + wilksVal);
+			percentile.setText("You are an " + lifterStandard + " level lifter.");
+	}
+	/**
+	 * Clear all the inputed value
+	 * @param event
+	 */
+	public void clear(ActionEvent event) {
+		nameInput.clear();
+		bodyweightInput.clear();
+		squat.clear();
+		benchInput.clear();
+		deadliftInput.clear();
+	}
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		units.getItems().addAll(options);
+		male.setToggleGroup(group);
+		female.setToggleGroup(group);
+		units.getSelectionModel().selectFirst();
+		unitsSelected();
+	}
+	
+	public void iteratePlaceholder(TextField field[], String message) {
+		try {
+			for (TextField i: field) {
+				i.setPromptText(message);
+			}
+		}
+		catch(NullPointerException e) {
+			System.out.println("At least one parameter is null - please enter a value in the missing field!");
+		}
+	}
 }
